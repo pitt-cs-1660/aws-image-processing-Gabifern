@@ -1,0 +1,13 @@
+{
+    "Records": {
+        "s3": {
+            "object": {
+                "key": [
+                    {
+                        "prefix": "resize/"
+                    }
+                ]
+            }
+        }
+    }
+}

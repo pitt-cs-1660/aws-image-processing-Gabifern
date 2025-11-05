@@ -1,0 +1,55 @@
+{
+    "TopicConfigurations": [
+        {
+            "TopicArn": "arn:aws:sns:us-east-1:932595691986:image-processing-topic",
+            "Events": [
+                "s3:ObjectCreated:*"
+            ],
+            "Filter": {
+                "Key": {
+                    "FilterRules": [
+                        {
+                            "Value": "resize/",
+                            "Name": "prefix"
+                        }
+                    ]
+                }
+            },
+            "Id": "resizeTopic"
+        },
+        {
+            "TopicArn": "arn:aws:sns:us-east-1:932595691986:image-processing-topic",
+            "Events": [
+                "s3:ObjectCreated:*"
+            ],
+            "Filter": {
+                "Key": {
+                    "FilterRules": [
+                        {
+                            "Value": "greyscale/",
+                            "Name": "prefix"
+                        }
+                    ]
+                }
+            },
+            "Id": "greyscaleTopic"
+        },
+        {
+            "TopicArn": "arn:aws:sns:us-east-1:932595691986:image-processing-topic",
+            "Events": [
+                "s3:ObjectCreated:*"
+            ],
+            "Filter": {
+                "Key": {
+                    "FilterRules": [
+                        {
+                            "Value": "exif/",
+                            "Name": "prefix"
+                        }
+                    ]
+                }
+            },
+            "Id": "exifTopic"
+        }
+    ]
+}
