@@ -5,9 +5,9 @@ COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 WORKDIR /var/task
 
-# copy dependency spec and install
+# copy dependency spec and install (resolve deps without pre-existing lock)
 COPY pyproject.toml ./
-RUN uv sync --frozen --no-dev
+RUN uv sync --no-dev
 
 # copy handler code
 COPY handler.py ./
